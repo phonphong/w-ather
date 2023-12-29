@@ -66,15 +66,13 @@ public class WeatherApp {
     }
 
     private static String parseWeatherData(String jsonData) {
-        // Điều này là nơi bạn xử lý dữ liệu thời tiết từ JSON hoặc XML response từ API
-        // Bạn cần phân tích dữ liệu và trích xuất thông tin thời tiết mà bạn muốn hiển thị
-        // Ví dụ:
-        // JSONObject jsonObject = new JSONObject(jsonData);
-        // String temperature = jsonObject.getJSONObject("main").getString("temp");
-        // String description = jsonObject.getJSONArray("weather").getJSONObject(0).getString("description");
-        // return "Temperature: " + temperature + "°C, " + description;
+       
+         JSONObject jsonObject = new JSONObject(jsonData);
+        String temperature = jsonObject.getJSONObject("main").getString("temp");
+        String description = jsonObject.getJSONArray("weather").getJSONObject(0).getString("description");
+        return "Temperature: " + temperature + "°C, " + description;
 
-        // Trong ví dụ này, chúng ta giả định rằng thông tin thời tiết được lấy từ JSON response.
+       
         return "Temperature: 25°C, Sunny";
     }
 }
